@@ -1,0 +1,24 @@
+.postWrapper {
+    display: flex;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid red;
+}
+
+.post {
+    background-color: #3fffdc;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    padding: 5px;
+    margin-left: 20px;
+
+    background-color: greenyellow;
+    border-radius: 50%;
+}

@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+.app-wrapper {
+  display: grid;
+  grid-template-areas:
+          "header header"
+          "main-menu main-content"
+          "footer footer";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+
+.app-wrapper .header {
+
+}
+
+.app-wrapper .nav-bar {
+  grid-area: main-menu;
+  background-color: aqua;
+}
+
+.app-wrapper .profile {
+  grid-area: main-content;
+  background-color: aqua;
+}
+
+.app-wrapper .main-footer {
+  grid-area: footer;
+  background-color: aqua;
+}

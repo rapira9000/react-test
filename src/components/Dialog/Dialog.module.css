@@ -1,0 +1,7 @@
+.dialogsWrapper {
+    display: flex;
+}
+
+.dialogsWrapper > *{
+    min-width: 150px;
+}

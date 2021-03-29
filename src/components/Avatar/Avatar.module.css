@@ -1,0 +1,31 @@
+.avatarWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.editButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+.editButton label {
+    display: block;
+    margin: 0;
+
+    cursor: pointer;
+}
+
+.inputFile {
+    display: none;
+}

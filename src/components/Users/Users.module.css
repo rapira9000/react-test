@@ -1,0 +1,64 @@
+.wrapperContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 170px);
+    grid-gap: 15px;
+}
+
+.container {
+    width: fit-content;
+
+    padding: 10px;
+
+    border-radius: 10px;
+    background-color: #9ebec1;
+}
+
+.container:last-child {
+    margin-bottom: 0;
+}
+
+.imageAvatar img {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+}
+
+.description {
+    width: 100%;
+}
+
+.userName {
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination span {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+
+    border-radius: 2px;
+    background-color: rgba(63, 255, 220, 0.76);
+    border: 1px solid #74c16b;
+    cursor: pointer;
+}
+
+span.currentPage {
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #000aff;
+}
+
+.loader {
+    color: red;
+}

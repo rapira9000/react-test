@@ -1,0 +1,38 @@
+.LoginForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 14px;
+
+    width: fit-content;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item > * {
+    padding: 5px 8px;
+}
+
+.label {
+    display: block;
+    width: 150px;
+}
+
+.inputField {
+    outline: 0;
+    border: 2px solid #9ebec1;
+    border-radius: 5px;
+}
+
+.inputField:focus {
+    border-color: #2e5eff;
+}
+
+.inputError,
+.inputError:focus,
+.inputError:active {
+    border-color: #ff0000 !important;
+}

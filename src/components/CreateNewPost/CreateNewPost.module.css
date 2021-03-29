@@ -1,0 +1,17 @@
+.createNewPost > *{
+    display: block;
+}
+
+.inputField {
+    outline: 0;
+    border: 2px solid #c1c1c1;
+}
+
+.inputField:focus {
+    border-color: #1d6cff;
+}
+
+.inputError,
+.inputError:focus {
+    border-color: #ff0000 !important;
+}

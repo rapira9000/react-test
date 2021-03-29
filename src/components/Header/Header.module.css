@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    grid-area: header;
+    background-color: aqua;
+}
+
+.loginBlog {
+    padding: 15px;
+
+    background-color: #c1c1c1c1;
+}
