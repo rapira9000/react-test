@@ -1,0 +1,35 @@
+.mess {
+    display: block;
+    width: 70%;
+    margin: 10px;
+    padding: 7px 10px;
+
+    background-color: #3fffdc;
+    border-radius: 7px;
+}
+
+.mess__wrapper--current-user {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mess__content {
+    display: flex;
+
+    line-height: 1;
+}
+
+.mess__loader {
+    margin-right: 5px;
+}
+
+.mess__date-created {
+    margin-bottom: 3px;
+    font-size: 8px;
+    color: #000649;
+}
+
+.mess__loader img {
+    width: 10px;
+    height: auto;
+}

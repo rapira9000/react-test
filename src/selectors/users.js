@@ -1,0 +1,1 @@
+export const usersOnlineStatusSelector = (state) => (state.usersPage.usersOnline);

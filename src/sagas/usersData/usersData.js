@@ -1,7 +1,7 @@
 import {takeEvery, put, call, select} from "redux-saga/effects";
 import {setTotalUsersCount, setUsers, toggleIsFetching, USERS__LOAD_USERS} from "../../redux/usersReducer";
 import {UsersAPI} from "../../api/api";
-import {authTokenSelector} from "../../selectors/authSelectors";
+import {authTokenSelector} from "../../selectors/auth";
 
 
 export function* workUsersData({currentPage, pageSize}) {

@@ -1,11 +1,13 @@
 .postWrapper {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid red;
+    padding: 10px;
+    background-color: #dff5e9;
 }
 
 .post {
+    width: 100%;
     background-color: #3fffdc;
     padding: 5px 12px;
     border-radius: 5px;
@@ -15,10 +17,78 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 20px;
-    padding: 5px;
-    margin-left: 20px;
+    margin-top: 5px;
+}
 
-    background-color: greenyellow;
+.likesCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.postHeader {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.postHeader,
+.postHeader_user {
+    width: 100%;
+}
+
+.postUserData {
+    width: 100%;
+
+    font-size: 10px;
+    color: #c1c1c1;
+}
+
+.postDateCreated {
+    width: 100%;
+    padding: 5px 0;
+
+    font-size: 13px;
+    color: #868686;
+}
+
+.postHeader_userName {
+    font-size: 11px;
+    color: #c1c1c1;
+}
+
+.post__likeIcon {
+    width: 20px;
+    height: auto;
+}
+
+.post__likeIconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+    margin-left: 5px;
+
     border-radius: 50%;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #8C85FC;
+}
+
+.post__likeIcon {
+    width: 100%;
+    height: auto;
+}
+
+.post__likeIconWrapper:hover {
+    background-color: #4158c1;
+    transition: 0.3s;
+}
+
+.disableLike .post__likeIcon {
+    transform: rotate(180deg);
 }

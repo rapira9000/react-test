@@ -5,6 +5,7 @@ import ProfileContainer from "../Profile/ProfileContainer";
 import UsersContainer from "../Users/UsersContainer";
 import LoginContainer from "../Login/LoginContainer";
 import RegistrationContainer from "../Registration/RegistrationContainer";
+import NewsContainer from "../News/NewsContainer";
 
 const Routes = () => {
     return (
@@ -14,7 +15,7 @@ const Routes = () => {
             <Route path="/dialog" render={() => <DialogContainer/>}/>
             <Route path="/users" render={() => <UsersContainer/>}/>
             <Route path="/login" render={() => <LoginContainer/>}/>
-            <Route path="/news" render={() => <DialogContainer/>}/>
+            <Route path="/news" render={() => <NewsContainer />}/>
             <Route path="/music" render={() => <DialogContainer/>}/>
             <Route path="/settings" render={() => <DialogContainer/>}/>
             <Route path="/registration" render={() => <RegistrationContainer/>}/>

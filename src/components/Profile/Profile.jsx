@@ -1,8 +1,8 @@
 import React from "react";
 import Classes from "./Profile.module.css";
 import CreateNewPostContainer from "../CreateNewPost/CreateNewPostContainer";
-import MyPostsContainer from "../MyPosts/MyPostsContainer";
 import ProfileInfo from "../ProfileInfo/ProfileInfo";
+import ProfilePostsContainer from "../ProfilePosts/ProfilePostsContainer";
 
 const Profile = (props) => {
     return (
@@ -14,7 +14,7 @@ const Profile = (props) => {
                 <CreateNewPostContainer />
             </div>
             <div className={'s'}>
-                <MyPostsContainer />
+                <ProfilePostsContainer />
             </div>
         </div>
     );

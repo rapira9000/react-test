@@ -1,13 +1,14 @@
 import {takeEvery, put, call, select} from "redux-saga/effects";
 import {
     AUTH__LOAD_USER_DATA,
-    setAuthStatus,
+    setAuthStatus, setInstanceSocket,
     setUserData,
     setUserDataFetching,
     setUserToken
 } from "../redux/authReducer";
 import {AuthAPI} from "../api/api";
-import {authTokenSelector} from "../selectors/authSelectors";
+import {authTokenSelector} from "../selectors/auth";
+import {connectWebSocket} from "../websockets/websocket";
 
 export function* workAuthUser(setToken = true) {
     let authToken = yield select(authTokenSelector);
@@ -20,6 +21,10 @@ export function* workAuthUser(setToken = true) {
         if (!data.errorStatus) {
             yield put(setUserData(data));
             yield put(setAuthStatus(true));
+
+            // init sockets
+            const webSocketEmit = yield call(connectWebSocket);
+            yield put(setInstanceSocket(webSocketEmit));
         }
     }
     yield put(setUserDataFetching(true));

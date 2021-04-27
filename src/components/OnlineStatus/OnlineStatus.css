@@ -1,0 +1,25 @@
+.userOnlineStatus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 12px;
+}
+
+.userOnlineStatus::before {
+    content: "";
+
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+
+    background-color: #929292;
+    border-color: #3fffdc;
+    border-radius: 50%;
+}
+
+.userOnlineStatus__online::before {
+    background-color: #359203;
+}

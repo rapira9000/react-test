@@ -8,9 +8,9 @@ import {
     profileSetUserCountPosts,
     profileUserPostsLoading
 } from "../../redux/profileReducer";
-import {authTokenSelector} from "../../selectors/authSelectors";
+import {authTokenSelector} from "../../selectors/auth";
 import {ProfileApi} from "../../api/api";
-import {profileUserLimitPostsSelector, profileUserPagePostsSelector} from "../../selectors/profileSelectors";
+import {profileUserLimitPostsSelector, profileUserPagePostsSelector} from "../../selectors/profile";
 
 export function* workLoadProfileUserPost() {
     yield put(profileChangePagePostsNumber());

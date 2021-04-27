@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import {compose} from "redux";
 import connect from "react-redux/es/connect/connect";
-import {authLoadUserData} from "../../redux/authReducer";
-import {isUserDataFetchingSelector} from "../../selectors/authSelectors";
+import {authLoadingConnWebSocket, authLoadUserData, setInstanceSocket} from "../../redux/authReducer";
+import {isUserDataFetchingSelector} from "../../selectors/auth";
 import App from "./App";
 
 const AppContainer = (props) => {
@@ -16,11 +16,13 @@ const AppContainer = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    isUserDataFetching: isUserDataFetchingSelector(state)
+    isUserDataFetching: isUserDataFetchingSelector(state),
 });
 
 export default compose(
     connect(mapStateToProps, {
-        authLoadUserData
+        authLoadUserData,
+        setInstanceSocket,
+        authLoadingConnWebSocket
     })
 )(AppContainer);

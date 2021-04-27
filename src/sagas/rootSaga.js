@@ -5,11 +5,12 @@ import {watchUserRegistration} from "./userRegistration";
 import {watchUserProfile} from "./userProfile/userProfile";
 import {watchUpdateUserAvatar} from "./userProfile/updateUserAvatar";
 import {watchUpdateUserFields} from "./userProfile/updateUserFields";
-import {watchUsersData} from "./usersData/usersData";
 import {watchUserFollowHandler} from "./usersData/userFollowHandler";
 import {watchUserUnFollowHandler} from "./usersData/userUnFollowHandler";
 import {watchCreateNewProfilePost} from "./userProfile/createNewProfilePost";
 import {watchLoadProfileUserPost} from "./userProfile/loadProfileUserPost";
+import {watchLikePost} from "./likePost";
+import {watchPosts} from "./posts";
 
 export function* rootSaga() {
     yield all([
@@ -24,8 +25,11 @@ export function* rootSaga() {
         watchCreateNewProfilePost(),
         watchLoadProfileUserPost(),
         //users
-        watchUsersData(),
         watchUserFollowHandler(),
-        watchUserUnFollowHandler()
+        watchUserUnFollowHandler(),
+        // like
+        watchLikePost(),
+        // posts
+        watchPosts(),
     ])
 }

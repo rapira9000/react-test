@@ -4,8 +4,8 @@ import {
     PROFILE__CREATE_NEW_POST_TEXT,
     profileUserPostsLoading
 } from "../../redux/profileReducer";
-import {authTokenSelector} from "../../selectors/authSelectors";
-import {newPostTextSelector} from "../../selectors/profileSelectors";
+import {authTokenSelector} from "../../selectors/auth";
+import {newPostTextSelector} from "../../selectors/profile";
 import {ProfileApi} from "../../api/api";
 
 export function* workCreateNewProfilePost() {

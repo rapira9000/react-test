@@ -6,7 +6,7 @@ import {
     getEditInputValueSelector,
     getIsEditInputSelector,
     profileInputFieldUpdatingSelector
-} from "../../selectors/profileSelectors";
+} from "../../selectors/profile";
 import {
     profileInputFieldUpdating,
     profileUpdateUserFields,

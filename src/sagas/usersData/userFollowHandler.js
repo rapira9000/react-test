@@ -1,7 +1,7 @@
 import {takeEvery, put, call, select} from "redux-saga/effects";
 import {UsersAPI} from "../../api/api";
 import {followingInProgress, followUser, USERS__LOAD_FOLLOW} from "../../redux/usersReducer";
-import {authTokenSelector} from "../../selectors/authSelectors";
+import {authTokenSelector} from "../../selectors/auth";
 
 export function* workUserFollowHandler({userId}) {
     const authToken = yield select(authTokenSelector);

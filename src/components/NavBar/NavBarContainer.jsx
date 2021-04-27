@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import NavBar from "./NavBar";
-import {isAuthSelector} from "../../selectors/authSelectors";
+import {isAuthSelector} from "../../selectors/auth";
 
 const NavBarContainer = (props) => {
     return (

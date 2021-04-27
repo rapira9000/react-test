@@ -17,6 +17,7 @@ export const PROFILE_CHANGE_PAGE_POSTS_NUMBER = `PROFILE_CHANGE_PAGE_POSTS_NUMBE
 export const PROFILE__SET_MAX_PAGE_POSTS_USER = `PROFILE__SET_MAX_PAGE_POSTS_USER`;
 export const PROFILE_BTN_POST_LOADING = `PROFILE_BTN_POST_LOADING`;
 export const PROFILE_INPUT_FIELD_UPDATING = `PROFILE_INPUT_FIELD_UPDATING`;
+export const PROFILE__IS_LIKE_FETCHING = `PROFILE__IS_LIKE_FETCHING`;
 
 let initialState = {
     posts: [],
@@ -112,13 +113,16 @@ const profileReducer = (state = initialState, action) => {
         case PROFILE__GET_USER_POSTS:
             return {
                 ...state,
-                posts: [...state.posts, ...action.posts]
+                posts: [...state.posts, ...action.posts.map(p => ({
+                    ...p,
+                    isLikeFetching: false
+                }))]
             };
 
         case PROFILE_CHANGE_PAGE_POSTS_NUMBER:
             return {
                 ...state,
-                pagePosts: +state.pagePosts + 1
+                pagePosts: ++state.pagePosts
             };
 
         case PROFILE__SET_MAX_PAGE_POSTS_USER:
@@ -131,6 +135,19 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 btnPostsLoading: action.btnPostsLoading
+            };
+
+        case PROFILE__IS_LIKE_FETCHING:
+            return {
+                ...state,
+                posts: [...state.posts].map(p => {
+                    if (p._id === action.postId) {
+                        return {
+                            ...p,
+                            isLikeFetching: !p.isLikeFetching
+                        }
+                    }
+                })
             };
 
         default:
@@ -160,5 +177,6 @@ export const profileSetUserCountPosts = (countPosts) => ({type: PROFILE__SET_USE
 export const profileChangePagePostsNumber = () => ({type: PROFILE_CHANGE_PAGE_POSTS_NUMBER});
 export const profileSetMaxPagePostsUser = (maxPage) => ({type: PROFILE__SET_MAX_PAGE_POSTS_USER, maxPage});
 export const profileBtnUserPostsLoading = (btnPostsLoading) => ({type: PROFILE_BTN_POST_LOADING, btnPostsLoading});
+export const profileIsLikeFetchingToggle = (postId) => ({type: PROFILE__IS_LIKE_FETCHING, postId});
 
 export default profileReducer;

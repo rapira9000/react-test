@@ -1,0 +1,31 @@
+.mess__form {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+    grid-gap: 10px;
+    padding: 7px 10px;
+}
+
+.mess__form textarea {
+    width: 100%;
+    min-height: 50px;
+    resize: vertical;
+}
+
+.mess-list {
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px 5px;
+
+    background-color: #f0f8ff;
+}
+
+.chat-window__footer textarea {
+    resize: vertical;
+    min-height: 55px;
+}
+
+.mess-list--scroll {
+    display: flex;
+    flex-direction: column-reverse;
+}

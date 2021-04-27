@@ -150,3 +150,42 @@ export const UserRegisterApi = {
         }).catch(err => ({errorStatus: err}));
     }
 };
+
+export const NewsApi = {
+    getNews: (token, page, limit) => {
+        return instance.get(`news/get-all?page=${page}&limit=${limit}`, {
+            headers: {
+                'Authorization': token,
+            }
+        }).then(response => {
+            return response.data
+        }).catch(err => ({errorStatus: err}));
+    }
+};
+
+export const Like = {
+    toggleLike: (token, postId) => {
+        return instance.put(`likes/`, {
+            postId
+        },
+            {
+            headers: {
+                'Authorization': token,
+            }
+        }).then(response => {
+            return response.data
+        }).catch(err => ({errorStatus: err}));
+    }
+};
+
+export const DialogsAPI = {
+    getFollowedUsers: (token, page, limit) => {
+        return instance.get(`users/get-followed-list?page=${page}&limit=${limit}`, {
+            headers: {
+                'Authorization': token,
+            }
+        }).then(response => {
+            return response.data
+        }).catch(err => ({errorStatus: err}));
+    }
+};

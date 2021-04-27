@@ -5,21 +5,16 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
-import {getProfileDataForFormSelector} from "../../selectors/profileSelectors";
+import {getProfileDataForFormSelector} from "../../selectors/profile";
 
 const ProfileContainer = (props) => {
     useEffect(() => {
         if (!props.userProfile) {
             props.profileUserLoadData(props.match.params.userId || null);
-            props.loadProfileUserPosts();
         }
     }, [props.isAuth]);
 
-    return (
-        <Suspense>
-            <Profile {...props} />
-        </Suspense>);
-
+    return <Profile {...props} />;
 };
 
 let mapStateToProps = (state) => (

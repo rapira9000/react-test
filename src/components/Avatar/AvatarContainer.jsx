@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
 import Avatar from "./Avatar";
-import {avatarUrlSelector, userAvatarSelector} from "../../selectors/profileSelectors";
+import {avatarUrlSelector, userAvatarSelector} from "../../selectors/profile";
 import {loadUserAvatar} from "../../redux/profileReducer";
 import {generateFullImageUrl} from "../../utils/helpers";
 

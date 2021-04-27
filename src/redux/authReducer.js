@@ -7,6 +7,8 @@ export const AUTH_TOKEN_FROM_LOCAL_STORAGE = `AUTH_TOKEN_FROM_LOCAL_STORAGE`;
 export const AUTH__LOAD_USER_DATA = `AUTH__LOAD_USER_DATA`;
 export const AUTH_LOAD_USER_TOKEN = `AUTH_LOAD_USER_TOKEN`;
 export const AUTH_LOAD_USER_REGISTRATION = `AUTH_LOAD_USER_REGISTRATION`;
+const AUTH__SET_SOCKET = `AUTH__SET_SOCKET`;
+export const AUTH__LOADING_CONN_SOCKET = `AUTH__LOADING_CONN_SOCKET`;
 
 let initialState = {
     isFetching: false,
@@ -14,7 +16,8 @@ let initialState = {
     userName: null,
     userEmail: null,
     isAuth: false,
-    userAuthToken: null
+    userAuthToken: null,
+    socket: null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -49,7 +52,15 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 userAuthToken: null,
-                isAuth: false
+                isAuth: false,
+                userId: null,
+                userName: null,
+                userEmail: null
+            };
+        case AUTH__SET_SOCKET:
+            return {
+                ...state,
+                webSocketEmit: action.webSocketEmit
             };
         default:
             return state;
@@ -66,17 +77,13 @@ export const setTokenToStorage = (token) => {
 };
 export const authLoadUserData = () => ({type: AUTH__LOAD_USER_DATA});
 export const authLoadUserToken = ({userEmail, userPassword}) => ({type: AUTH_LOAD_USER_TOKEN, userEmail, userPassword});
-export const userLoadRegistration = ({userName, userEmail, userPassword}) => ({type: AUTH_LOAD_USER_REGISTRATION, userName, userEmail, userPassword});
-
-export const userRegisterSubmit = ({userName, userEmail, userPassword}) => {
-    // return (dispatch) => {
-    //     dispatch(setUserDataFetching(true));
-    //     UserRegisterApi.registerNewUser(userName, userEmail, userPassword).then(data => {
-    //         if (!data.errorStatus) {
-    //             dispatch(getAuthToken(userEmail, userPassword));
-    //         }
-    //     });
-    // }
-};
+export const userLoadRegistration = ({userName, userEmail, userPassword}) => ({
+    type: AUTH_LOAD_USER_REGISTRATION,
+    userName,
+    userEmail,
+    userPassword
+});
+export const setInstanceSocket = (webSocketEmit) => ({type: AUTH__SET_SOCKET, webSocketEmit});
+export const authLoadingConnWebSocket = (onEvents) => ({type: AUTH__LOADING_CONN_SOCKET, onEvents});
 
 export default authReducer;

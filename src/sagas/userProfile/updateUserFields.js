@@ -1,9 +1,9 @@
 import {takeEvery, put, call, select} from "redux-saga/effects";
 import {PROFILE_UPDATE_USER_FIELD, profileInputFieldUpdating} from "../../redux/profileReducer";
-import {authTokenSelector} from "../../selectors/authSelectors";
+import {authTokenSelector} from "../../selectors/auth";
 import {ProfileApi} from "../../api/api";
 import {toggleFieldUpdating} from "../../utils/helpers";
-import {profileInputFieldUpdatingSelector} from "../../selectors/profileSelectors";
+import {profileInputFieldUpdatingSelector} from "../../selectors/profile";
 
 export function* workUpdateUserFields({userField, fieldValue}) {
     const authToken = yield select(authTokenSelector);

@@ -3,7 +3,7 @@ import {loadNewPostText, newPostTextChange} from "../../redux/profileReducer";
 import CreateNewPost from "./CreateNewPost";
 import {connect} from "react-redux";
 import {compose} from "redux";
-import {newPostTextSelector} from "../../selectors/profileSelectors";
+import {newPostTextSelector} from "../../selectors/profile";
 
 let mapStateToProps = (state) => ({
     newPostText: newPostTextSelector(state)

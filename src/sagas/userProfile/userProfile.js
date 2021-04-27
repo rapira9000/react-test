@@ -1,7 +1,7 @@
 import {takeEvery, call, put, select} from "redux-saga/effects";
 import {PROFILE_USER_LOAD_DATA, setProfileUserData} from "../../redux/profileReducer";
 import {ProfileApi} from "../../api/api";
-import {authTokenSelector} from "../../selectors/authSelectors";
+import {authTokenSelector} from "../../selectors/auth";
 
 function* workUserProfile({userId}) {
     const authToken = yield select(authTokenSelector);

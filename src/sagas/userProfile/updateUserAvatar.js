@@ -1,6 +1,6 @@
 import {takeEvery, put, call, select} from "redux-saga/effects";
 import {PROFILE_LOAD_USER_AVATAR, updateUserAvatar} from "../../redux/profileReducer";
-import {authTokenSelector} from "../../selectors/authSelectors";
+import {authTokenSelector} from "../../selectors/auth";
 import {ProfileApi} from "../../api/api";
 
 export function* workUpdateUserAvatar({userAvatar}) {
